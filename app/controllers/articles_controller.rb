@@ -22,6 +22,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def show
+    #byebug
+    @article = Article.find(params[:id])
+  end
+
   def update
     @article = Article.find(params[:id])
     if @article.update(params.require(:article).permit(:title, :author, :description))
@@ -33,8 +38,10 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    #byebug
+  def destroy
     @article = Article.find(params[:id])
+    if @article.destroy
+      redirect_to articles_path
+    end
   end
 end

@@ -1,0 +1,22 @@
+<h1>Articles Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Title</td>
+      <td>Author</td>
+      <td>Description</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |ar| %>
+    <tr>
+      <td><%= ar.title %></td>
+      <td><%= ar.author %></td>
+      <td><%= ar.description %></td>
+      <td>some Actions</td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
